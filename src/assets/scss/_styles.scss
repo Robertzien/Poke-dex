@@ -1,0 +1,10 @@
+/* file import */
+
+//Import general styles
+@import 'general/settings';
+@import 'general/main';
+
+//Import components styles
+@import 'components/header';
+@import 'components/searchbar';
+@import 'components/pokedex';

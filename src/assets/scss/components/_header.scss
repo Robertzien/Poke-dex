@@ -1,0 +1,11 @@
+.header {
+  background: $red;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  &__heading {
+    color: white;
+    margin: 0;
+  }
+}

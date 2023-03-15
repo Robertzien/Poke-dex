@@ -1,0 +1,173 @@
+/* file import */
+* {
+  font-size: 1rem;
+  color: white;
+  font-family: "Cabin", sans-serif;
+}
+
+.container {
+  display: flex;
+  padding: 1rem 2rem;
+}
+@media (min-width: 480px) {
+  .container {
+    padding: 3rem 3rem;
+  }
+}
+@media (min-width: 765px) {
+  .container {
+    padding: 5rem 6rem;
+  }
+}
+@media (min-width: 1800px) {
+  .container {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+body {
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+@media (min-width: 765px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+}
+@media (min-width: 765px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+@media (min-width: 765px) {
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+@media (min-width: 765px) {
+  h4 {
+    font-size: 1.875rem;
+  }
+}
+
+h5 {
+  font-size: 1.625rem;
+}
+@media (min-width: 765px) {
+  h5 {
+    font-size: 1.75rem;
+  }
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+@media (min-width: 765px) {
+  h6 {
+    font-size: 1.625rem;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+ul li {
+  margin-bottom: 1rem;
+}
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background: #EB534E;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.header__heading {
+  color: white;
+  margin: 0;
+}
+
+.search-bar {
+  margin-left: auto;
+}
+.search-bar input {
+  border-radius: 999rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  color: black;
+}
+
+* {
+  color: black;
+}
+
+.pokedex {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2rem;
+}
+
+.pokemon {
+  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  position: relative;
+}
+.pokemon__image {
+  margin-bottom: 1rem;
+}
+.pokemon__image img {
+  max-width: 125px;
+  max-height: 125px;
+}
+.pokemon__name {
+  color: black;
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+.pokemon__id {
+  color: grey;
+  font-size: 0.875rem;
+}
+
+/*# sourceMappingURL=style.css.map */

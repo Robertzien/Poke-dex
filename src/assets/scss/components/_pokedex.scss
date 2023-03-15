@@ -1,0 +1,38 @@
+* {
+  color: black;
+}
+
+.pokedex {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2rem;
+}
+
+.pokemon {
+  box-shadow: $box-shadow;
+  padding: 1rem;
+  border-radius: $border-radius-40;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  position: relative;
+  &__image {
+    margin-bottom: 1rem;
+    img {
+      max-width: 125px;
+      max-height: 125px;
+    }
+  }
+  &__name {
+    color: black;
+    font-weight: bold;
+    font-size: $font-size-30;
+    margin-bottom: 1rem;
+  }
+  &__id {
+    color: grey;
+    font-size: $font-size-10;
+  }
+}
