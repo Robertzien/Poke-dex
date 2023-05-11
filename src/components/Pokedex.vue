@@ -2,9 +2,14 @@
   <Loading v-if="loading"/>
   <div class="pokedex" v-if="!loading">
     <div class="pokedex__filters">
-      <button class="button" @click="showNextGen()"></button>
-      <div class="range">
-        <div class="range__heading">
+      <div class="pokedex__filter next-gen">
+        <div class="pokedex__filters-heading">
+          Next gen
+        </div>
+        <button class="button" @click="showNextGen()"></button>
+      </div>
+      <div class="pokedex__filter range">
+        <div class="pokedex__filters-heading">
           Range
         </div>
         <div class="range__inputs">
@@ -74,11 +79,14 @@ export default {
       } else if (this.currentGen === 2) {
         this.fetchThirdGen();
         this.currentGen++;
-      } else if (this.currentGen === 3) {
+      } else if (this.currentGen === 3){
         this.fetchFourthGen();
         this.currentGen++;
       } else {
-        console.log("error");
+        this.fetchFirstGen();
+        this.currentGen = 1;
+        this.startRange = 1;
+        this.endRange = 151;
       }
     },
     fetchFirstGen() {
@@ -139,9 +147,9 @@ export default {
     fetchFourthGen() {
       this.loading = true;
       this.error = null;
-      this.startRange = 387;
+      this.startRange = 386;
       this.endRange = 493;
-      fetch("https://pokeapi.co/api/v2/pokemon?limit=493&offset=387")
+      fetch("https://pokeapi.co/api/v2/pokemon?limit=493&offset=386")
           .then((res) => res.json())
           .then((data) => {
             this.pokemon = data.results;
@@ -156,13 +164,13 @@ export default {
           });
     },
     async getPokemonIds() {
-      for (let pokemon of this.pokemon) {
-        const res = await fetch(pokemon.url);
-        const data = await res.json();
-        pokemon.id = data.id;
-        pokemon.spriteUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
-        this.pokemonCompleted++;
-      }
+      const urls = this.pokemon.map(pokemon => pokemon.url);
+      const responses = await Promise.all(urls.map(url => fetch(url)));
+      const data = await Promise.all(responses.map(res => res.json()));
+      this.pokemon.forEach((pokemon, i) => {
+        pokemon.id = data[i].id;
+        pokemon.spriteUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data[i].id}.png`;
+      });
       this.loading = false;
     },
     toUpperCase() {
