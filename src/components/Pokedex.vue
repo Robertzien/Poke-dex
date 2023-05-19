@@ -6,6 +6,7 @@
         <div class="pokedex__filters-heading">
           Next gen
         </div>
+<!--        Voeg een icoontje toe aan de knop want het is niet echt duidelijk dat het een knop is-->
         <button class="button" @click="showNextGen()"></button>
       </div>
       <div class="pokedex__filter range">
@@ -72,6 +73,7 @@ export default {
     this.fetchFirstGen();
   },
   methods: {
+    //Is er misschien een manier om dit korter te maken?
     showNextGen() {
       if (this.currentGen === 1) {
         this.fetchSecondGen();
