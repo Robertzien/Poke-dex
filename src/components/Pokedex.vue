@@ -174,7 +174,7 @@ export default {
       this.loading = false;
     },
     toUpperCase() {
-    this.pokemon.map((pokemon) => {
+      this.pokemon.map((pokemon) => {
         pokemon.name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         return pokemon;
       });
