@@ -103,16 +103,6 @@ a {
   margin: 0;
 }
 
-.search-bar {
-  margin-left: auto;
-}
-.search-bar input {
-  border-radius: 999rem;
-  padding: 0.75rem 1rem;
-  border: none;
-  color: black;
-}
-
 * {
   color: black;
 }
@@ -155,8 +145,13 @@ a {
 .pokedex__filters {
   margin-bottom: 2rem;
   display: flex;
-  flex-flow: row nowrap;
   align-items: flex-start;
+  flex-flow: column wrap;
+}
+@media (min-width: 480px) {
+  .pokedex__filters {
+    flex-flow: row nowrap;
+  }
 }
 .pokedex__filters-heading {
   color: white;
@@ -167,6 +162,12 @@ a {
   padding-right: 2rem;
   margin-right: 2rem;
   border-right: solid 2px white;
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+}
+.pokedex__filter:first-child {
+  margin-bottom: 2rem;
 }
 .pokedex__filter:last-child {
   margin-right: 0;
@@ -233,11 +234,14 @@ a {
 }
 
 .button {
-  width: 100px;
+  width: fit-content;
   height: 42.5px;
   border-radius: 999rem;
   background: #EB534E;
   border: none;
+}
+.button svg {
+  display: block;
 }
 
 .loading {

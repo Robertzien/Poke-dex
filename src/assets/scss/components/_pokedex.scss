@@ -29,8 +29,11 @@
   &__filters {
     margin-bottom: 2rem;
     display: flex;
-    flex-flow: row nowrap;
     align-items: flex-start;
+    flex-flow: column wrap;
+    @media (min-width: $breakpoint-10) {
+      flex-flow: row nowrap;
+    }
     &-heading {
       color: white;
       margin-bottom: 1rem;
@@ -41,6 +44,12 @@
     padding-right: 2rem;
     margin-right: 2rem;
     border-right: solid 2px white;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    &:first-child {
+      margin-bottom: 2rem;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -110,7 +119,7 @@
 }
 
 .button {
-  width: 100px;
+  width: fit-content;
   height: 42.5px;
   border-radius: $border-radius-full;
   background: $red;

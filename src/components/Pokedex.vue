@@ -77,22 +77,26 @@ export default {
     this.fetchFirstGen();
   },
   methods: {
-    //Is er misschien een manier om dit korter te maken?
     showNextGen() {
-      if (this.currentGen === 1) {
-        this.fetchSecondGen();
-        this.currentGen++;
-      } else if (this.currentGen === 2) {
-        this.fetchThirdGen();
-        this.currentGen++;
-      } else if (this.currentGen === 3){
-        this.fetchFourthGen();
-        this.currentGen++;
-      } else {
-        this.fetchFirstGen();
-        this.currentGen = 1;
-        this.startRange = 1;
-        this.endRange = 151;
+      switch (this.currentGen) {
+        case 1:
+          this.fetchSecondGen();
+          this.currentGen++;
+          break;
+        case 2:
+          this.fetchThirdGen();
+          this.currentGen++;
+          break;
+        case 3:
+          this.fetchFourthGen();
+          this.currentGen++;
+          break;
+        default:
+          this.fetchFirstGen();
+          this.currentGen = 1;
+          this.startRange = 1;
+          this.endRange = 151;
+          break;
       }
     },
     fetchFirstGen() {
