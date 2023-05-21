@@ -49,6 +49,9 @@
     flex-flow: column wrap;
     &:first-child {
       margin-bottom: 2rem;
+      @media (min-width: $breakpoint-10) {
+        margin-bottom: 0;
+      }
     }
     &:last-child {
       margin-right: 0;
@@ -124,6 +127,7 @@
   border-radius: $border-radius-full;
   background: $red;
   border: none;
+  cursor:pointer;
   svg {
     display: block;
   }
