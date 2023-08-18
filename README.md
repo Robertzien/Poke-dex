@@ -1,6 +1,6 @@
-# pokedex
+# Pokedex
 
-https://robertzien.github.io/Poke-dex/
+https://robertzien.github.io/Pokedex/
 
 This template should help get you started developing with Vue 3 in Vite.
 
